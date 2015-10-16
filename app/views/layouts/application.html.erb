@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>InventorsRails</title>
+  <title>Inventors BETA</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if alert %>
+	<p class="alert">
+		<%= alert %>
+	</p>
+<% elsif notice %>
+	<p class="notice">
+		<%= notice %>
+	</p>
+<% end %>
+
+<header id="main_header" class="cf">
+	<div class="wrapper_wide">
+		<%= link_to "Inventors", root_path, id: "logo" %>
+		<nav>
+			<ul>
+				<% unless idea_signed_in? %>
+						<li><%= link_to "Explore", ideas_path %></li>
+						<li><%= link_to "Sign in", new_idea_session_path %></li>
+						<li><%= link_to "Share an idea", new_idea_registration_path %></li>
+					<% else %>
+						<li><a href="#">Dashboard</a></li>
+						<li><%= link_to "Explore", ideas_path %></li>
+						<li><%= link_to "Sign Out", destroy_idea_session_path, method: :delete %></li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</header>
 
 <%= yield %>
 
