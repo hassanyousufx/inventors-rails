@@ -4,24 +4,17 @@
 			<a href="#" id="logo">Inventors</a>
 			<nav>
 				<ul>
-					<% unless idea_signed_in? %>
-						<li><%= link_to "Explore", ideas_path %></li>
-						<li><%= link_to "Sign in", new_idea_session_path %></li>
-						<li><%= link_to "Share an idea", new_idea_registration_path %></li>
-					<% else %>
+						<li>Explore</li>
+						<li><%= link_to "Sign in", new_ideabook_session_path %></li>
+						<li><%= link_to "Share an idea", new_ideabook_registration_path %></li>
 						<li><a href="#">Dashboard</a></li>
-						<li><%= link_to "Explore", ideas_path %></li>
-						<li><%= link_to "Sign Out", destroy_idea_session_path, method: :delete %></li>
-					<% end %>
 				</ul>
 			</nav>
 		</div>
 	</header>
 	<div class="wrapper_skinny">
 		<h1>Discover new creative<br> ideas, or share your own</h1>
-		<%= link_to "Share an idea", new_idea_registration_path, class: "button button_highlight" %>
-		<%= link_to "Explore", ideas_path, class: "button button_white" %>
-
+		<%= link_to "Share an idea", new_ideabook_registration_path, class: "button button_highlight" %>
 		<a href="#" class="button button_white">Explore</a>
 	</div>
 </div>
