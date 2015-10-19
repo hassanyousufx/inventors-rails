@@ -29,7 +29,7 @@
 						<li><%= link_to "Sign in", new_ideabook_session_path %></li>
 						<li><%= link_to "Share an idea", new_ideabook_registration_path %></li>
 					<% else %>
-						<li><%= link_to "Dashboard", root_path </a></li>
+						<li><%= link_to "Dashboard", root_path %></a></li>
 						<li><%= link_to "Explore", ideabooks_path %></li>
 						<li><%= link_to "Sign Out", destroy_ideabook_session_path, method: :delete %></li>
 				<% end %>
