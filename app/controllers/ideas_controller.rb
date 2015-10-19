@@ -1,4 +1,6 @@
 class IdeasController < ApplicationController
+	before_action :authenticate_ideabook!, except: [:show]
+	before_filter :require_permission
 	before_action :find_ideabook
 	before_action :find_idea, only: [:show, :edit, :update, :destroy]
 
@@ -47,5 +49,12 @@ class IdeasController < ApplicationController
 
 	def find_idea
 		@idea = Idea.find(params[:id])
+	end
+
+	def require_permission
+		@ideabook = Ideabook.find(params[:ideabook_id])
+		if current_ideabook != @ideabook_id
+			redirect_to root_path, notice: "Sorry, you're not allowed to view that page"
+		end
 	end
 end
