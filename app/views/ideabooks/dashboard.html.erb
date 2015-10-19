@@ -31,7 +31,7 @@
               <p class="description"><%= truncate(idea.description, length: 140) %></p>
               <div class="authorized_links">
                   <%= link_to "Edit", edit_ideabook_idea_path(@ideabook, idea) %>
-                  <%= link_to "Delete", ideabook_idea_path(@ideabook, idea), method: :delete, data: {confirm: "Are you sure?"} %>
+                  
               </div>
             </div>
           </li>
