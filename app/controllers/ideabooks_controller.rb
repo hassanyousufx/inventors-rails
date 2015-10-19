@@ -4,6 +4,7 @@ class IdeabooksController < ApplicationController
 	end
 
 	def show
-		@ideabooks = Ideabook.find(params[:id])
+		@ideabook = Ideabook.find(params[:id])
+		@ideas = Idea.where(ideabook_id: @ideabook).order("created_at DESC")
 	end
 end

@@ -17,12 +17,21 @@
 		</div>	
 	</div>	
 	<div id="breadcrumb">
-		<%= link_to ideabooks_path do %>
+		<%= link_to ideabook_path do %>
 			All Ideabooks
 			<span>/</span>
-			The Rocketship Idea
+			<%= link_to @ideabook.title, ideabook_path(@ideabook) %>
+			<span>/</span>
+			<%= @idea.title %>
 		<% end %>
-		
+	</div>
+
+	<div id="episode_content">
+		<div class="wrapper_skinny">
+			<img src="img/thumb1.png" alt="" class="current_episode_thumbnail">
+			<h2><%= @idea.title %></h2>
+			<p class="description"><%= @idea.description %></p>
+		</div>
 	</div>
 
 	<div id="episodes">
@@ -31,14 +40,13 @@
 				<% @ideas.each do |idea| %>
 					<li class="cf">
 						<div class="episode_thumbnail">
-							<a href="#">
+							<a href="">
 								<img src="img/thumb1.png" alt="">
 							</a>
 						</div>
 						<div class="episode_overview">
 							<h2><%= link_to idea.title, ideabook_idea_path(@ideabook, idea) %></h2>
-							<p class="description"><%= truncate(idea.description, length: 140) %>
-							</p>
+							<p class="description"><%= truncate(idea.description, length: 140) %></p>
 						</div>
 					</li>
 				<% end %>
