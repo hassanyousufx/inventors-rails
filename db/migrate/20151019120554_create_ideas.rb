@@ -7,6 +7,5 @@ class CreateIdeas < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :ideas, :ideabooks
   end
 end
