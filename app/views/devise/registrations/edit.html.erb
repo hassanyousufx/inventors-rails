@@ -8,10 +8,10 @@
   <div id="links">
     <div class="wrapper_skinny">
       <ul>
-        <li>Ideas</li>
-        <li><a href="#">New Idea</a></li>
+        <li><%= link_to "Ideas", root_path %></li>
+        <li><%= link_to "New Idea", new_ideabook_idea_path(@ideabook) %></li>
         <li><%= link_to "Account Settings", edit_ideabook_registration_path, class: "current" %></li>
-        <li><a href="#">View Ideabook</a></li>
+        <li><%= link_to "View Ideabook", ideabook_path(current_ideabook) %></li>
       </ul>
     </div>
   </div>
