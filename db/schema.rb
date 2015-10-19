@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016190433) do
+ActiveRecord::Schema.define(version: 20151019113143) do
 
   create_table "ideabooks", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 20151016190433) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "title"
+    t.text     "description"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "google"
   end
 
   add_index "ideabooks", ["email"], name: "index_ideabooks_on_email", unique: true
