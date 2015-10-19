@@ -1,0 +1,81 @@
+<div id="ideas_show">
+	<div id="show_banner">
+		<div class="wrapper_skinny">
+			<h1><%= @ideabooks.title %></h1>
+			<p class="description"><%= @ideabooks.description %></p>
+			<% unless @ideabooks.facebook.blank? %>
+				<a href="<%= @ideabooks.facebook %>" class="subscribe_link">Facebook</a>
+			<% end %>
+
+			<% unless @ideabooks.twitter.blank? %>
+				<a href="<%= @ideabooks.twitter %>" class="subscribe_link">Twitter</a>
+			<% end %>
+
+			<% unless @ideabooks.google.blank? %>
+				<a href="<%= @ideabooks.google %>" class="subscribe_link">Google+</a>
+			<% end %>
+		</div>	
+	</div>	
+	<div id="breadcrumb">
+		<%= link_to ideabook_path do %>
+			All Ideas
+			<span>/</span>
+			The Rocketship Idea
+		<% end %>
+		
+	</div>
+
+	<div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+				<li class="cf">
+					<div class="episode_thumbnail">
+						<a href="">
+							<img src="img/thumb1.png" alt="">
+						</a>
+					</div>
+					<div class="episode_overview">
+						<h2><a href="episode.html">How to Pull off 12 Months</a></h2>
+						<p class="description">
+							Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum 
+						</p>
+					</div>
+				</li>
+
+				<li class="cf">
+					<div class="episode_thumbnail">
+						<a href="">
+							<img src="img/thumb1.png" alt="">
+						</a>
+					</div>
+					<div class="episode_overview">
+						<h2><a href="episode.html">How to Pull off 12 Months</a></h2>
+						<p class="description">
+							Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum 
+						</p>
+					</div>
+				</li>
+
+				<li class="cf">
+					<div class="episode_thumbnail">
+						<a href="">
+							<img src="img/thumb1.png" alt="">
+						</a>
+					</div>
+					<div class="episode_overview">
+						<h2><a href="episode.html">How to Pull off 12 Months</a></h2>
+						<p class="description">
+							Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum 
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="pagination">
+	<span class="previous_page disabled">Previous</span>
+	<em class="current">1</em>
+	<a href="">2</a>
+	<a class="next_page" href="#">Next</a>
+</div>

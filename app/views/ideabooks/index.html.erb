@@ -1,0 +1,21 @@
+<div id="banner" class="ideas_banner">
+	<h1>Discover new creative ideas</h1>
+</div>
+
+<div id="ideas" class="cf">
+	<div class="wrapper">
+		<ul>
+			<% @ideabooks.each do |ideabook| %>
+				<%= link_to ideabook do %>
+				<li>
+					<img src="img/thumb1.png" alt="">
+					<div class="ideas_overview">
+						<h2><%= ideabook.title %></h2>
+					<p class="ideas_count">1 Episode</p>	
+					</div>
+				</li>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+</div>

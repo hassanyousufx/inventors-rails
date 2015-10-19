@@ -5,7 +5,7 @@
 			<nav>
 				<ul>
 					<% unless ideabook_signed_in? %>
-						<li>Explore</li>
+						<li><%= link_to "Explore", ideabooks_path %></li>
 						<li><%= link_to "Sign in", new_ideabook_session_path %></li>
 						<li><%= link_to "Share an idea", new_ideabook_registration_path %></li>
 					<% else %>
@@ -20,6 +20,6 @@
 	<div class="wrapper_skinny">
 		<h1>Discover new creative<br> ideas, or share your own</h1>
 		<%= link_to "Share an idea", new_ideabook_registration_path, class: "button button_highlight" %>
-		<a href="#" class="button button_white">Explore</a>
+		<%= link_to "Explore", ideabooks_path, class: "button button_white" %>
 	</div>
 </div>
