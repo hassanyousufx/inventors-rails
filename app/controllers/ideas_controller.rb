@@ -40,7 +40,7 @@ class IdeasController < ApplicationController
 	private
 
 	def idea_params
-		params.require(:idea).permit(:title, :description)
+		params.require(:idea).permit(:title, :description, :idea_thumbnail)
 	end
 
 	def find_ideabook
@@ -53,8 +53,9 @@ class IdeasController < ApplicationController
 
 	def require_permission
 		@ideabook = Ideabook.find(params[:ideabook_id])
-		if current_ideabook != @ideabook_id
+		if current_ideabook != @ideabook
 			redirect_to root_path, notice: "Sorry, you're not allowed to view that page"
 		end
 	end
 end
+ 

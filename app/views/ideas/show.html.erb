@@ -28,7 +28,7 @@
 
 	<div id="episode_content">
 		<div class="wrapper_skinny">
-			<img src="img/thumb1.png" alt="" class="current_episode_thumbnail">
+			<%= image_tag @idea.idea_thumbnail.url(:medium), class: "current_episode_thumbnail" %>
 			<h2><%= @idea.title %></h2>
 			<p class="description"><%= @idea.description %></p>
 		</div>

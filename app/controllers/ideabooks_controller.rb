@@ -10,7 +10,6 @@ class IdeabooksController < ApplicationController
 	end
 
 	def dashboard
-
 	end
 
 	private
