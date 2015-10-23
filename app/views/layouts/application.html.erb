@@ -3,6 +3,7 @@
 <head>
   <title>Inventors BETA</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
@@ -10,20 +11,31 @@
 <body>
 
 <% if alert %>
-	<p class="alert">
-		<%= alert %>
-	</p>
+	<div id="notice_wrapper">
+		<p class="alert"><%= alert %></p>	
+	</div>
+	
 <% elsif notice %>
-	<p class="notice">
-		<%= notice %>
-	</p>
+	<div id="notice_wrapper">
+		<p class="notice"><%= notice %></p>	
+	</div>
 <% end %>
 
 <% unless current_page?(root_path) %>
 	<%= render 'layouts/header'; %>
 <% end %>
 
-<%= yield %>
+<%= yield %>t
+
+<script>
+	$(document).ready(function(){
+		setTimeout(function() {
+			$('#notice_wrapper').fadeOut("slow", function() {
+				$this.remove();
+			});
+		}, 4500 );
+	});
+</script>
 
 </body>
 </html>
