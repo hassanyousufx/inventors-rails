@@ -18,7 +18,7 @@ class IdeasController < ApplicationController
 	end
 
 	def show
-		@ideas = Idea.where(ideabook_id: @ideabook).order("created_at DESC").reject { |e| e.id == @idea.id }
+		@ideas = Idea.where(ideabook_id: @ideabook).order("created_at DESC").limit(5).reject { |e| e.id == @idea.id }
 	end
 
 	def edit

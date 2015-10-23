@@ -4,7 +4,7 @@
 
 <div id="ideas" class="cf">
 	<div class="wrapper">
-		<ul>
+		<ul class="cf">
 			<% @ideabooks.each do |ideabook| %>
 				<%= link_to ideabook do %>
 				<li>
@@ -17,5 +17,7 @@
 				<% end %>
 			<% end %>
 		</ul>
+
+		<%= will_paginate @ideabooks, previous_label: "Previous", next_label: "Next" %>
 	</div>
 </div>

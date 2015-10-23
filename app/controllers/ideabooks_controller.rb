@@ -3,7 +3,7 @@ class IdeabooksController < ApplicationController
 	before_action :find_idea, only: [:show, :dashboard]
 
 	def index
-		@ideabooks = Ideabook.all.order("created_at DESC")
+		@ideabooks = Ideabook.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
 	end
 
 	def show
@@ -15,7 +15,7 @@ class IdeabooksController < ApplicationController
 	private
 
 	def find_idea
-		@ideas = Idea.where(ideabook_id: @ideabook).order("created_at DESC")
+		@ideas = Idea.where(ideabook_id: @ideabook).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def find_ideabook
